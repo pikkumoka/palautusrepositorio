@@ -46,8 +46,9 @@ def choose_nationality() :
                      "GER", "SUI", "NOR", "UZB", "LAT", "AUS"]
 
     while True :
-        nat = str(console.input("""[magenta][USA/FIN/CAN/SWE/CZE/RUS/SLO/FRA/GBR/SVK/DEN/NED/AUT/BLR/GER/SUI/NOR/UZB/LAT/AUS] : 
-Enter XXX to exit """))
+        nat = str(console.input("[magenta][USA/FIN/CAN/SWE/CZE/RUS/SLO/" \
+        "FRA/GBR/SVK/DEN/NED/AUT/BLR/GER/SUI/NOR/UZB/LAT/AUS] : " \
+        "Enter XXX to exit "))
 
         if nat.upper() not in nationalities :
             print("Try again")
@@ -60,7 +61,8 @@ def choose_season() :
     seasons = ["2025-26", "2024-25", "2023-24", "2022-23", "2021-22", "2020-21", "2019-20", "2018-19"]
 
     while True :
-        season = str(console.input("[2025-26/2024-25/2023-24/2022-23/2021-22/2020-21/2019-20/2018-19] : "))
+        season = str(console.input("[2025-26/2024-25/2023-24/2022-23/" \
+        "2021-22/2020-21/2019-20/2018-19] : "))
         if season not in seasons :
             print("Try again")
 
@@ -77,7 +79,8 @@ def print_info(players, season, nationality) :
     table.add_column("Points", justify="right", style="green")
 
     for player in players:
-        table.add_row(player.name, player.team, str(player.goals), str(player.assists), str(player.goals + player.assists))
+        table.add_row(player.name, player.team, str(player.goals), 
+                      str(player.assists), str(player.goals + player.assists))
 
     console.print(table)
 
